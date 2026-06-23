@@ -24,8 +24,16 @@ function timestamp(): string {
 const logLines = computed<string[]>(() => {
   const msgs = wsStore.deviceLogs(props.deviceId)
   return msgs.map((msg) => {
-    const ts = msg.data?.includes(' ') ? '' : `[${timestamp()}] `
-    return `${ts}${msg.data}`
+    let text = msg.data
+    // 备用解析：如果 data 是 JSON 字符串，提取 text 字段
+    if (typeof text === 'string' && text.startsWith('{')) {
+      try {
+        const parsed = JSON.parse(text)
+        if (parsed.text) text = parsed.text
+      } catch { /* 不是 JSON，保持原样 */ }
+    }
+    const ts = text?.includes(' ') ? '' : `[${timestamp()}] `
+    return `${ts}${text}`
   })
 })
 
