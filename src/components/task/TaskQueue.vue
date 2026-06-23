@@ -57,6 +57,7 @@ async function handleStart(): Promise<void> {
 
 async function handleStop(): Promise<void> {
   await taskStore.stopQueue(props.deviceId)
+  await taskStore.fetchQueue(props.deviceId).then(syncTasks)  // 刷新队列状态
 }
 
 async function handleClearCompleted(): Promise<void> {

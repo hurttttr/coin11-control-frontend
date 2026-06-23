@@ -4,6 +4,9 @@
 
 基于 **Vue 3 + TypeScript + Vite** 构建，通过 **WebSocket** 与后端实时通信，提供 Android 设备管理、自动化任务调度、实时设备画面预览和日志查看等功能。
 
+> 本项目基于 [coin11-tb](https://github.com/czl0325/coin11-tb) 二次开发，后者提供了淘宝/支付宝/闲鱼等平台的自动化脚本。  
+> 配套后端项目：[coin11-control-backend](https://github.com/hurttttr/coin11-control-backend)
+
 ---
 
 ## 目录
@@ -38,7 +41,7 @@ Coin11-TB 控制平台前端是一个面向 Android 设备自动化测试/运维
 - **实时监控** — 通过 WebSocket 流式传输设备截图和日志，实现远程设备画面预览和实时日志输出
 - **全局管控** — 仪表盘提供设备统计和任务概览，全局任务列表支持跨设备管理
 
-后端服务为 [coin11-tb](https://github.com/your-org/coin11-tb)（Python + FastAPI），前端通过 REST API 和 WebSocket 与之通信。
+后端服务为 [coin11-control-backend](https://github.com/hurttttr/coin11-control-backend)（Python + FastAPI），前端通过 REST API 和 WebSocket 与之通信。
 
 ---
 
