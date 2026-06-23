@@ -142,7 +142,7 @@ function clearLogs(): void {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent);
   font-weight: 500;
 }
@@ -207,11 +207,11 @@ function clearLogs(): void {
 
 .log-content {
   flex: 1;
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
   padding: 10px 0;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   background: #060a14;
   position: relative;
@@ -249,7 +249,7 @@ function clearLogs(): void {
 
 .line-number {
   color: rgba(148, 163, 184, 0.3);
-  min-width: 40px;
+  min-width: 48px;
   user-select: none;
   flex-shrink: 0;
 }

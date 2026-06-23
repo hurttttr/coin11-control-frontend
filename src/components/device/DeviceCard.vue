@@ -101,7 +101,7 @@ async function handleDisconnect(event: MouseEvent): Promise<void> {
 }
 
 .device-status-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -126,7 +126,7 @@ async function handleDisconnect(event: MouseEvent): Promise<void> {
 }
 
 .device-model {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 4px;
@@ -134,7 +134,7 @@ async function handleDisconnect(event: MouseEvent): Promise<void> {
 }
 
 .device-serial {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   font-family: inherit;
 }
@@ -154,7 +154,7 @@ async function handleDisconnect(event: MouseEvent): Promise<void> {
 }
 
 .footer-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -168,7 +168,7 @@ async function handleDisconnect(event: MouseEvent): Promise<void> {
   background: transparent;
   border: 1px solid var(--error-dim);
   color: var(--error);
-  font-size: 10px;
+  font-size: 12px;
   padding: 2px 8px;
   border-radius: 4px;
   cursor: pointer;

@@ -35,8 +35,7 @@ import UpdateBanner from '@/components/common/UpdateBanner.vue'
 
 .content-area {
   flex: 1;
-  padding: 32px;
-  max-width: 1600px;
+  padding: 36px 40px;
   width: 100%;
 }
 

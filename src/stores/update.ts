@@ -15,6 +15,9 @@ export const useUpdateStore = defineStore('update', () => {
   const pulling = ref(false)
   const error = ref<string | null>(null)
   const dismissed = ref(false)
+  const repoStatus = ref<string>('unknown')  // unknown | cloning | ready | error
+  const repoError = ref<string | null>(null)
+  const repoChecking = ref(false)
   let initialized = false
 
   // ── Actions ──
@@ -54,6 +57,22 @@ export const useUpdateStore = defineStore('update', () => {
     }
   }
 
+  async function checkRepoStatus(): Promise<void> {
+    repoChecking.value = true
+    try {
+      const response = await fetch('/api/update/repo-status')
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const data = await response.json()
+      repoStatus.value = data.status
+      repoError.value = data.error || null
+    } catch (e) {
+      repoStatus.value = 'error'
+      repoError.value = e instanceof Error ? e.message : '检查仓库状态失败'
+    } finally {
+      repoChecking.value = false
+    }
+  }
+
   function dismiss(): void {
     dismissed.value = true
   }
@@ -85,9 +104,13 @@ export const useUpdateStore = defineStore('update', () => {
     pulling,
     error,
     dismissed,
+    repoStatus,
+    repoError,
+    repoChecking,
     // actions
     checkUpdate,
     pullUpdate,
+    checkRepoStatus,
     dismiss,
     reset,
     autoCheck,

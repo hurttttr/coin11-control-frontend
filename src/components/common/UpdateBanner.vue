@@ -4,10 +4,11 @@ import { storeToRefs } from 'pinia'
 import { onMounted } from 'vue'
 
 const store = useUpdateStore()
-const { updateInfo, checking, dismissed } = storeToRefs(store)
+const { updateInfo, checking, dismissed, repoStatus, repoError } = storeToRefs(store)
 
 onMounted(() => {
   store.checkUpdate()
+  store.checkRepoStatus()
 })
 
 function handleDismiss(): void {
@@ -20,6 +21,24 @@ function handlePull(): void {
 </script>
 
 <template>
+  <!-- 仓库状态提示 -->
+  <div v-if="store.repoStatus === 'cloning'" class="repo-status-banner repo-status-cloning">
+    <div class="update-content">
+      <span class="update-icon">⟳</span>
+      <span class="update-title">正在初始化 coin11-tb 仓库...</span>
+    </div>
+  </div>
+  <div v-else-if="store.repoStatus === 'error'" class="repo-status-banner repo-status-error">
+    <div class="update-content">
+      <span class="update-icon">⚠</span>
+      <div class="update-text">
+        <span class="update-title">coin11-tb 仓库初始化失败</span>
+        <span class="update-detail">{{ repoError }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 现有更新提示 -->
   <div
     v-if="updateInfo.has_update && !dismissed"
     class="update-banner"
@@ -74,7 +93,7 @@ function handlePull(): void {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .update-title {
@@ -102,7 +121,7 @@ function handlePull(): void {
   background: rgba(0, 240, 255, 0.1);
   color: var(--accent);
   font-family: inherit;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -142,5 +161,23 @@ function handlePull(): void {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+.repo-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  gap: 16px;
+}
+
+.repo-status-cloning {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(99, 102, 241, 0.08));
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.repo-status-error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(245, 158, 11, 0.08));
+  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
 }
 </style>

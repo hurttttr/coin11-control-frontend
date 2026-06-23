@@ -124,7 +124,7 @@ onUnmounted(() => {
 }
 
 .page-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   margin: 0;
   display: flex;
@@ -134,7 +134,7 @@ onUnmounted(() => {
 }
 
 .page-subtitle {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text-muted);
   margin: 4px 0 0;
   font-family: inherit;
@@ -164,7 +164,7 @@ onUnmounted(() => {
 
 .detail-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 24px;
 }
 
@@ -175,7 +175,7 @@ onUnmounted(() => {
 }
 
 .section-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   margin: 0;
   color: var(--text-secondary);

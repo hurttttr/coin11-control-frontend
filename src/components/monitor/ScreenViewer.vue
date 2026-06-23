@@ -98,6 +98,7 @@ const isConnected = computed(() => wsStore.isConnected(props.deviceId))
 .screen-viewer {
   width: 100%;
   aspect-ratio: 16 / 9;
+  min-height: 320px;
   background: #000;
   border-radius: 8px;
   overflow: hidden;

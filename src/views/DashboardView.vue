@@ -157,7 +157,7 @@ onMounted(() => {
 }
 
 .page-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   margin: 0;
   color: var(--text-primary);
@@ -250,7 +250,7 @@ onMounted(() => {
 }
 
 .stat-value {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1;
   margin-bottom: 2px;
@@ -262,7 +262,7 @@ onMounted(() => {
 .stat-value.warning { color: var(--warning); }
 
 .stat-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -282,7 +282,7 @@ onMounted(() => {
 }
 
 .section-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0;
   color: var(--text-primary);

@@ -187,7 +187,7 @@ async function onDragEnd(): Promise<void> {
 }
 
 .queue-count {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
 }
 
@@ -204,7 +204,7 @@ async function onDragEnd(): Promise<void> {
   background: transparent;
   color: var(--text-secondary);
   font-family: inherit;
-  font-size: 11px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
@@ -335,7 +335,7 @@ async function onDragEnd(): Promise<void> {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 10px;
+  font-size: 12px;
   padding: 2px 8px;
   border-radius: 4px;
   text-transform: uppercase;
@@ -382,7 +382,7 @@ async function onDragEnd(): Promise<void> {
 }
 
 .task-script {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-primary);
   font-family: inherit;
 }

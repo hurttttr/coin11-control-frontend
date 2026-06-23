@@ -8,7 +8,7 @@ const props = defineProps<{
   showLabel?: boolean
 }>()
 
-const sizeMap = { sm: 6, md: 10, lg: 14 }
+const sizeMap = { sm: 8, md: 12, lg: 16 }
 
 const dotSize = computed(() => sizeMap[props.size ?? 'md'])
 
@@ -40,7 +40,7 @@ const statusLabel = computed(() => {
 }
 
 .status-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
 }
 

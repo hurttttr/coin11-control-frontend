@@ -90,7 +90,7 @@ function navigate(item: NavItem): void {
 }
 
 .logo-text {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--text-primary);
@@ -101,7 +101,7 @@ function navigate(item: NavItem): void {
 }
 
 .logo-subtitle {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-muted);
   margin-top: 4px;
   margin-left: 32px;
@@ -121,7 +121,7 @@ function navigate(item: NavItem): void {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 10px 16px;
   border-radius: 10px;
   background: transparent;
   border: none;
